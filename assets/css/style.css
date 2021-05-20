@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+.dbg{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+.container{
+    padding: 0;
+    width: 80%;
+    margin: 5vh auto;
+    height: calc(100vh - 5vh);
+    background-color: lightblue;
+}
+/* COMMON RULES */
+.p-10px{
+    padding: 10px;
+}
+
+
+/* SIDEBAR */
+
+/* SEZIONE UTENTE */
+.utente{
+    width:100%;
+    height: 12%;
+    background-color: #EAEAEA;
+    padding:5px;
+    justify-content: space-between;
+}
+.utente .io > img{
+    width:55px;
+    border-radius: 50%;
+}
+.utente span, .icons{
+    line-height: 50px;
+    
+}
+.icons{
+    padding-right:2%;
+    color: #B1B1B1;
+    width:50%;
+    text-align: right;
+    justify-content: space-around;
+}    
+.icons i{
+    text-align: right;
+    margin-right: 15px;
+    font-size: 20px;
+}
+/* /SEZIONE UTENTE */
+
+/* SEZIONE NOTIFICHE */
+.notifiche{
+    width:100%;
+    height: 12%;
+    background-color: #8EDAFC;
+}
+.notifiche i {
+    font-size: 25px;
+    line-height:55px;
+    margin-left: 25px;
+    border:1px solid white;
+    border-radius: 100%;
+    margin-top: 10px;
+    background-color: white;
+    color: #8EDAFC;
+
+}
+.notifiche .col-9 > span{
+    line-height: 50px;
+}
+.fa-bell-slash:before {
+    content: "\f1f6";
+    padding: 15px
+/* .soundOff{
+    border: 1px solid black;
+    border-radius: 100%;
+    height: 0%;
+} */
+
+/* /SEZONE NOTIFICHE  */
