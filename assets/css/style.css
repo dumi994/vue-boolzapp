@@ -3,17 +3,17 @@
     margin:0;
     padding:0;
 }
-.dbg{
+/* .dbg{
     width: 100%;
     height: 100%;
     border: 1px solid black;
-}
+} */
 .container{
     padding: 0;
     width: 80%;
     margin: 5vh auto;
     height: calc(100vh - 5vh);
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 body{
     background: linear-gradient(180deg, #DDDBD1 0%, #D7DBD7 0.01%, #D7DBD7 99.98%, #D5DBD9 99.99%, #D2DBDC 100%);
@@ -27,9 +27,12 @@ body{
 /* SIDEBAR */
 
 /* SEZIONE UTENTE */
+.utente{
+    border-right: 1px solid grey;
+}
 .utente, .utenteOn{
     width:100%;
-    height: 12%;
+    height: 85px;
     background-color: #EAEAEA;
     padding:10px;
     justify-content: space-between;
@@ -59,7 +62,7 @@ img{
 /* SEZIONE NOTIFICHE */
 .notifiche{
     width:100%;
-    height: 12%;
+    height: 85px;
     background-color: #8EDAFC;
 }
 .notifiche i {
@@ -121,13 +124,14 @@ img{
 
 
 /* \\\\\\\\\\\\\\\\\\\\\ MAIN \\\\\\\\\\\\\ */
+/* SEZIONE CHAT ATTIVA */
 .utenteOn{
     width:100%;
-    height: 12%;
+    height: 85px;
     background-color: #EAEAEA;
     
 }
-.utenteOn .col-5 i{
+.utenteOn .col-5{
     text-align: right;
     line-height: 50px;
     justify-content: space-between;
@@ -135,3 +139,32 @@ img{
     color: #B1B1B1;
     font-size: 20px;
 }
+.utenteOn .col-5 i{
+    margin-right: 20px;
+}
+/* /SEZIONE CHAT ATTIVA */
+
+/* SEZIONE CHAT */
+.sezioneChat{
+    height: 77%;
+    background-color: red;
+    background-image: url(../img/mine.jpg)
+}
+.sezioneMSG{
+    height:77px;
+    background-color:#F3EEEA;
+}
+.sezioneMSG span {
+    height: 55px;
+    margin: 10px 10px 0 10px;
+}
+.form-control{
+    height:55px;
+    border-radius: 0;
+    border: none;
+    margin: 10px;
+}
+
+/* SEZIONE CHAT */
+
+
