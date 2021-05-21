@@ -2,6 +2,7 @@
 const app = new Vue({
     el: "#root",
     data:{
+		counter:0,
         image:"../img/avatar",
         contacts: [
 	{
@@ -98,7 +99,23 @@ const app = new Vue({
             const percorso = this.image + contatto.avatar + ".jpg";
             console.log(percorso);
             return percorso;
-        }
+        },
+		selectUser(el){
+			const messaggio = this.contacts[el];
+			const testo = this.el.text
+			console.log(testo);
+
+
+		}
+		/* messaggi(index){
+			const messaggio = this.contacts[index];
+			const mess = this.message[index]
+			console.log(messaggio); */
+			/* const messaggio = this.contacts[index];
+			const percorsoMessaggio = this.message;
+			console.log(percorsoMessaggio);
+			return percorsoMessaggio; */
+		
     }
 })
 

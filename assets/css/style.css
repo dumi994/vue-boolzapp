@@ -146,6 +146,7 @@ img{
 
 /* SEZIONE CHAT */
 .sezioneChat{
+    position: relative;
     height: 77%;
     background-color: red;
     background-image: url(../img/mine.jpg)
@@ -163,6 +164,28 @@ img{
     border-radius: 0;
     border: none;
     margin: 10px;
+}
+
+/* MESSAGGI */
+.ricevuto{
+    background-color: white;
+    border-radius:0 10px 10px 10px ;
+    max-width: 600px;
+    width:100px;
+    height: 50px;
+    position: absolute;
+    top:20px;
+    left:20px
+}
+.inviato{
+    background-color: #D5F9BA;
+    border-radius: 10px 10px 0 10px ;
+    max-width: 600px;
+    width:100px;
+    height: 50px;
+    position: absolute;
+    bottom:20px;
+    right:20px
 }
 
 /* SEZIONE CHAT */

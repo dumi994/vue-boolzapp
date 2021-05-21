@@ -54,21 +54,9 @@
                 <div class="contatti">
                     <div class="contatto" v-for="(el, index) in contacts">
                       <img :src="'./assets/img/avatar' + el.avatar + '.jpg'" alt=""> 
-                      <!--   <img src="./assets/img/avatar_1.jpg" alt=""> -->
+                      
                         <span>{{el.name}} <hr> </span>
                     </div>
-                    <!-- <div class="contatto">
-                        <img src="./assets/img/avatar_2.jpg" alt="">
-                        <span>Fabio</span>
-                    </div><hr>
-                    <div class="contatto">
-                        <img src="./assets/img/avatar_3.jpg" alt="">
-                        <span>Samuele</span>
-                    </div><hr>
-                    <div class="contatto">
-                        <img src="./assets/img/avatar_4.jpg" alt="">
-                        <span>Luisa</span>
-                    </div> -->
                 </div>
 
             </div>
@@ -89,10 +77,12 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <div class="col-12 sezioneChat">
-                   <div class="ricevuto" v-if="messaggio.status === sent" >
-                       <span v-for="(el, index) in contacts">{{percorsoMessaggio}}</span>
-                   </div>
+                <div class="col-12 sezioneChat"  v-for="(contatto, counter) in contacts" @click="contacts[index]">
+                    <p class="messages">{{contacts[counter].messages}}</p>
+                    <span class="dates">{{contacts[counter].date}}</span>
+                <!--    <div class="ricevuto" v-if="messaggio.status === sent" >
+                       <span v-for="(el, index) in contacts">lorem</span>
+                   </div> -->
                    <div class="inviato">
 
                    </div>
