@@ -52,9 +52,9 @@
                 </div>
                 <!-- /SEARCH BAR -->
                 <div class="contatti">
-                    <div class="contatto" v-for="(el, index) in contacts">
+                    <div class="contatto" v-for="(el, index) in contacts" @click="changeActiveUser(index)">
                       <img :src="'./assets/img/avatar' + el.avatar + '.jpg'" alt=""> 
-                      
+
                         <span>{{el.name}} <hr> </span>
                     </div>
                 </div>
@@ -65,11 +65,11 @@
                 <!-- SEZIONE CHAT ATTIVA -->
                 <div class="utenteOn d-flex">
                     <div class="col-1">
-                           <img src="./assets/img/avatar_1.jpg" alt="">
+                           <img :src="'./assets/img/avatar' + contacts[activeUser].avatar + '.jpg'" alt="">
                     </div>
                     <div class="col-6 text-left">
-                        <p class="m-0"><strong>Michele</strong> </p class="m-0">
-                        <p>Ultimo accesso alle:</p>
+                        <p class="m-0"><strong>{{contacts[activeUser].name}}</strong> </p class="m-0">
+                        <p>Ultimo accesso alle:{{}}</p>
                     </div>
                     <div class="col-5">
                         <i class="fas fa-search"></i>
@@ -77,28 +77,18 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <div class="col-12 sezioneChat"  v-for="(contatto, counter) in contacts" @click="contacts[counter]">
-                    <!-- <p class="messages">{{contacts[counter].messages}}</p>
-                    <span class="dates">{{contacts[counter].date}}</span> -->
-                    <div class="chat" @click="selectUser(index)">
-                        <p class="messaggio" v-for="(message, index) in contacts[0].messages">{{ message.text }}</p>
-                      <!--   <p class="messages" v-for="message in contacts[0].messages">
-                            {{ message.text }} {{ message.date }}</p> -->
+                <div class="col-12 sezioneChat"><!-- activeUserIndex -->
+                    <div class="chat d-flex">
+                        <p :class="message.status" v-for="(message, index) in contacts[activeUser].messages">{{ message.text }} <br> <span class="testoPiccolo">{{message.date}}</span> </p>
+                        
                     </div>
-                <!--    <div class="ricevuto" v-if="messaggio.status === sent" >
-                       <span v-for="(el, index) in contacts">lorem</span>
-                   </div> -->
-                   <div class="inviato">
 
-                   </div>
                 </div>
                 <div class="col-12 sezioneMSG">
                     <form action="" class="d-flex">
                         <span class="input-group-text" id="basic-addon1"><i class="far fa-smile-beam"></i></span>
                         <input type="text" class="form-control" placeholder="Scrivi messaggio">
-                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-microphone"></i></span>
-
-                        
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-microphone"></i></span> 
                     </form>
                 </div>
                 <!-- /SEZIONE CHAT ATTIVA -->

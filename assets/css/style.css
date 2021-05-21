@@ -167,25 +167,38 @@ img{
 }
 
 /* MESSAGGI */
-.ricevuto{
+.received{
     background-color: white;
     border-radius:0 10px 10px 10px ;
     max-width: 600px;
-    width:100px;
-    height: 50px;
-    position: absolute;
-    top:20px;
-    left:20px
+    padding:10px;
+
+    align-self: flex-start;
 }
-.inviato{
+.sent{
+    padding:10px;
     background-color: #D5F9BA;
     border-radius: 10px 10px 0 10px ;
     max-width: 600px;
-    width:100px;
-    height: 50px;
-    position: absolute;
-    bottom:20px;
-    right:20px
+    align-self: flex-end;
+
+}
+
+
+/*  */
+
+
+.chat{
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.testoPiccolo{
+    font-size: 10px;
+    color:grey;
+    float: right;
 }
 
 /* SEZIONE CHAT */
