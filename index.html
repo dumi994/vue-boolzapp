@@ -90,7 +90,12 @@
                     </div>
                 </div>
                 <div class="col-12 sezioneChat">
-                   <!--  <img src="./assets/img/mine.jpg" alt=""> -->
+                   <div class="ricevuto" v-if="messaggio.status === sent" >
+                       <span v-for="(el, index) in contacts">{{percorsoMessaggio}}</span>
+                   </div>
+                   <div class="inviato">
+
+                   </div>
                 </div>
                 <div class="col-12 sezioneMSG">
                     <form action="" class="d-flex">
