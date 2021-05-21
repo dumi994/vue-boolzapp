@@ -53,10 +53,10 @@
                 <!-- /SEARCH BAR -->
                 <div class="contatti">
                     <div class="contatto" v-for="(el, index) in contacts">
-                     <!--    <img :src="percorsoFoto(index, contacts)" alt=""> QUESTO NON FUNZIONA -->
-                        <img src="./assets/img/avatar_1.jpg" alt="">
-                        <span>{{el.name}}</span>
-                    </div><hr>
+                      <img :src="'./assets/img/avatar' + contacts.avatar + '.jpg' + percorsoFoto(index, contacts)" alt=""> 
+                      <!--   <img src="./assets/img/avatar_1.jpg" alt=""> -->
+                        <span>{{el.name}} <hr> </span>
+                    </div>
                     <!-- <div class="contatto">
                         <img src="./assets/img/avatar_2.jpg" alt="">
                         <span>Fabio</span>
