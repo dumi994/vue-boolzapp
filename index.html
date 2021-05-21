@@ -78,8 +78,13 @@
                     </div>
                 </div>
                 <div class="col-12 sezioneChat"  v-for="(contatto, counter) in contacts" @click="contacts[counter]">
-                    <p class="messages">{{contacts[counter].messages}}</p>
-                    <span class="dates">{{contacts[counter].date}}</span>
+                    <!-- <p class="messages">{{contacts[counter].messages}}</p>
+                    <span class="dates">{{contacts[counter].date}}</span> -->
+                    <div class="chat" @click="selectUser(index)">
+                        <p class="messaggio" v-for="(message, index) in contacts[0].messages">{{ message.text }}</p>
+                      <!--   <p class="messages" v-for="message in contacts[0].messages">
+                            {{ message.text }} {{ message.date }}</p> -->
+                    </div>
                 <!--    <div class="ricevuto" v-if="messaggio.status === sent" >
                        <span v-for="(el, index) in contacts">lorem</span>
                    </div> -->

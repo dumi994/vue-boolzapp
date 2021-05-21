@@ -100,13 +100,13 @@ const app = new Vue({
             console.log(percorso);
             return percorso;
         },
-		selectUser(element, index){
-			let messaggio = this.contacts[index];
-			let testo = this.messages.text;
+		/* selectUser(element, index){
+			let messaggio = this.contacts.messages;
+			let testo = this.messaggio.text;
 			console.log(testo);
 
 
-		}
+		} */
 		/* messaggi(index){
 			const messaggio = this.contacts[index];
 			const mess = this.message[index]
