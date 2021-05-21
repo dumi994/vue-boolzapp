@@ -77,7 +77,7 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <div class="col-12 sezioneChat"  v-for="(contatto, counter) in contacts" @click="contacts[index]">
+                <div class="col-12 sezioneChat"  v-for="(contatto, counter) in contacts" @click="contacts[counter]">
                     <p class="messages">{{contacts[counter].messages}}</p>
                     <span class="dates">{{contacts[counter].date}}</span>
                 <!--    <div class="ricevuto" v-if="messaggio.status === sent" >
