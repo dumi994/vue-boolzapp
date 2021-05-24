@@ -14,7 +14,7 @@ const app = new Vue({
             let minuti = d.getMinutes();
             let dataCompleta = `${giorno}/${mese}/${anno}  ${ore}:${minuti}`;
             return dataCompleta;
-        },
+        }, 
 
         image:"../img/avatar",
 
@@ -106,6 +106,14 @@ const app = new Vue({
 		]
     },
     methods:{
+		/* oraAttuale() {
+			var d = new Date();
+			var h = addZero(d.getHours());
+			var m = addZero(d.getMinutes());
+			var s = addZero(d.getSeconds());
+			let dataComleta = `${d}, ${h}/${m}/${s}`
+			return dataComleta;
+		}, */
         percorsoFoto(index){
             const contatto = this.contacts[index];
             const percorso = this.image + contatto.avatar + ".jpg";
@@ -118,23 +126,27 @@ const app = new Vue({
 		},
 		aggiungiMessaggio(i){   //array nuovoMessaggio
             //Pusha nuovoMEssaggio in array messages
-			this.contacts[i].messages.push(
+			console.log(i)
+				this.contacts[this.activeUser].messages.push(
 				{
 				date: this.oraAttuale,
 				text: this.nuovoMessaggio,
 				status: 'sent',
-				}
+				
+			},
+		
+			
 			);
 			this.nuovoMessaggio = '';
 			setTimeout(() => {
-				this.contacts[i].message.push(
+				this.contacts[this.activeUser].messages.push(
 					{
 					date: this.oraAttuale,
 					text: 'E allora?',
 					status: 'received',
-					}
+					},
 				)
-			}, 5000)
+			}, 3000)
 		
         },
     },
