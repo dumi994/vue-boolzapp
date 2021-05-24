@@ -55,8 +55,9 @@
                     <div class="contatto" :class="activeUser === index ? 'active' : '' " v-for="(el, index) in contacts" @click="changeActiveUser(index)">
                       <img :src="'./assets/img/avatar' + el.avatar + '.jpg'" alt=""> 
 
-                        <span>{{el.name}} <hr> </span>
+                        <span>{{el.name}}  </span>
                     </div>
+                   
                 </div>
 
             </div>
@@ -88,7 +89,7 @@
                 <div class="col-12 sezioneMSG">
                     <div  class="d-flex">
                         <span class="input-group-text" id="basic-addon1"><i class="far fa-smile-beam"></i></span>
-                        <input type="text" class="form-control" placeholder="Scrivi messaggio" v-model="nuovoMessaggio">
+                        <input type="text" class="form-control" placeholder="Scrivi messaggio" v-model="nuovoMessaggio" @keyup="nuovoMessaggio">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-microphone"></i></span> 
                     </div>
                 </div>
