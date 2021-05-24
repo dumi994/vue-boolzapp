@@ -52,7 +52,7 @@
                 </div>
                 <!-- /SEARCH BAR -->
                 <div class="contatti">
-                    <div class="contatto" v-for="(el, index) in contacts" @click="changeActiveUser(index)">
+                    <div class="contatto" :class="activeUser === index ? 'active' : '' " v-for="(el, index) in contacts" @click="changeActiveUser(index)">
                       <img :src="'./assets/img/avatar' + el.avatar + '.jpg'" alt=""> 
 
                         <span>{{el.name}} <hr> </span>

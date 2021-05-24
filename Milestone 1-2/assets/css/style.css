@@ -172,13 +172,15 @@ img{
     border-radius:0 10px 10px 10px ;
     max-width: 600px;
     padding:10px;
+    box-shadow: 3px 5px rgba(88, 88, 88, 02);
 
     align-self: flex-start;
 }
 .sent{
     padding:10px;
     background-color: #D5F9BA;
-    border-radius: 10px 10px 0 10px ;
+    border-radius: 20px 20px 0 20px;
+    box-shadow: 3px 5px rgba(88, 88, 88, 02);
     max-width: 600px;
     align-self: flex-end;
 
@@ -203,4 +205,11 @@ img{
 
 /* SEZIONE CHAT */
 
+.contatto.active{
+    background-color: grey;
+    cursor: pointer;
 
+}
+.contact:hover{
+    background-color: lightslategray;
+}
