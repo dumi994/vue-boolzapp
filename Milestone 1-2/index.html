@@ -69,7 +69,7 @@
                     </div>
                     <div class="col-6 text-left">
                         <p class="m-0"><strong>{{contacts[activeUser].name}}</strong> </p class="m-0">
-                        <p v-for="(message, index) in contacts[activeUser].messages" :class="(message.status)">Ultimo accesso alle:{{message.date}}</p>
+                        <p v-for="(message, index) in contacts[activeUser].messages" >Ultimo accesso alle:{{message.date}}</p>
                     </div>
                     <div class="col-5">
                         <i class="fas fa-search"></i>
