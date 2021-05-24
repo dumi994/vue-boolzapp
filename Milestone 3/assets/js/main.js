@@ -104,7 +104,7 @@ const app = new Vue({
 			this.activeUser = index;
 		},
 		aggiungiMessaggio(){
-            //Pusha nuovoProdotto in listaSpesa
+            //Pusha nuovoMEssaggio in array messages
 			let messaggioInv = this.contacts.message;
             this.messaggioInv.push(this.nuovoMessaggio);
             
