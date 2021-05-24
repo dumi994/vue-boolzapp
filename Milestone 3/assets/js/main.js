@@ -3,8 +3,21 @@ const app = new Vue({
     el: "#root",
     data:{
 		activeUser:0,
-		nuovoMessaggio:[],
+		nuovoMessaggio:'',
+		
+		oraAttuale: function () {
+            let d = new Date();
+            let giorno = d.getDate();
+            let mese = d.getMonth();
+            let anno = d.getFullYear();
+            let ore = d.getHours();
+            let minuti = d.getMinutes();
+            let dataCompleta = `${giorno}/${mese}/${anno}  ${ore}:${minuti}`;
+            return dataCompleta;
+        },
+
         image:"../img/avatar",
+
         contacts: [
 			{
 				name: 'Michele',
@@ -103,19 +116,33 @@ const app = new Vue({
 		changeActiveUser(index){
 			this.activeUser = index;
 		},
-		aggiungiMessaggio(){
+		aggiungiMessaggio(i){   //array nuovoMessaggio
             //Pusha nuovoMEssaggio in array messages
-			let messaggioInv = this.contacts.message;
-            this.messaggioInv.push(this.nuovoMessaggio);
-            
-			console.log(messaggioInv);
+			this.contacts[i].messages.push(
+				{
+				date: this.oraAttuale,
+				text: this.nuovoMessaggio,
+				status: 'sent',
+				}
+			);
+			this.nuovoMessaggio = '';
+			setTimeout(() => {
+				this.contacts[i].message.push(
+					{
+					date: this.oraAttuale,
+					text: 'E allora?',
+					status: 'received',
+					}
+				)
+			}, 5000)
+		
         },
     },
 	mounted(){
-		document.addEventListener('keyup', (e) =>{
+		document.addEventListener('keydown', (e) =>{
             console.log(e.key);
             if(e.key === 'Enter'){
-                this.aggiungiMessaggio()
+                this.aggiungiMessaggio(this.i)
             }
 		})
 	}

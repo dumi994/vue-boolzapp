@@ -81,16 +81,16 @@
                     <div class="chat d-flex">
                         <p :class="message.status" v-for="(message, index) in contacts[activeUser].messages">{{ message.text }} <br> <span class="testoPiccolo">{{message.date}}</span> </p>
                         <!-- Nuovi messaggi -->
-                        <<!-- p  @keyup="aggiungiMessaggio" v-model="nuovoMessaggio"></p> -->
+                     <!--    <p  @keyup="aggiungiMessaggio" v-model="nuovoMessaggio"></p> -->
                     </div>
 
                 </div>
                 <div class="col-12 sezioneMSG">
-                    <form action="" class="d-flex">
+                    <div  class="d-flex">
                         <span class="input-group-text" id="basic-addon1"><i class="far fa-smile-beam"></i></span>
-                        <input type="text" class="form-control" placeholder="Scrivi messaggio" v-model:="nuovoMessaggio">
+                        <input type="text" class="form-control" placeholder="Scrivi messaggio" v-model="nuovoMessaggio">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-microphone"></i></span> 
-                    </form>
+                    </div>
                 </div>
                 <!-- /SEZIONE CHAT ATTIVA -->
             </div>
