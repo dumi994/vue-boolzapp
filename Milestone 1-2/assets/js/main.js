@@ -101,6 +101,10 @@ const app = new Vue({
 		
 		changeActiveUser(index){
 			this.activeUser = index;
+		},
+		ultimoElem(){
+			let ultimoAccesso = this.contacts[index].messages.date.length
+			console.log(ultimoAccesso);
 		}
     }
 })
