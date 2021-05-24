@@ -12,7 +12,8 @@ const app = new Vue({
             let anno = d.getFullYear();
             let ore = d.getHours();
             let minuti = d.getMinutes();
-            let dataCompleta = `${giorno}/${mese}/${anno}  ${ore}:${minuti}`;
+			let secondi = d.getSeconds()
+            let dataCompleta = `${giorno}/${mese}/${anno}  ${ore}:${minuti}:${secondi}`;
             return dataCompleta;
         }, 
 
@@ -124,12 +125,12 @@ const app = new Vue({
 		changeActiveUser(index){
 			this.activeUser = index;
 		},
-		aggiungiMessaggio(i){   //array nuovoMessaggio
+		aggiungiMessaggio(){ 
             //Pusha nuovoMEssaggio in array messages
 		
 				this.contacts[this.activeUser].messages.push(
 				{
-				date: this.oraAttuale,
+				date: this.oraAttuale(),
 				text: this.nuovoMessaggio,
 				status: 'sent',
 				
@@ -142,7 +143,7 @@ const app = new Vue({
 				
 				this.contacts[this.activeUser].messages.push(
 					{
-					date: this.oraAttuale,
+					date: this.oraAttuale(),
 					text: 'E allora?',
 					status: 'received',
 					},
