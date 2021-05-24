@@ -149,7 +149,8 @@ img{
     position: relative;
     height: 77%;
     background-color: red;
-    background-image: url(../img/mine.jpg)
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
 }
 .sezioneMSG{
     height:77px;

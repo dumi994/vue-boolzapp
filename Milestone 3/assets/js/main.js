@@ -106,7 +106,7 @@ const app = new Vue({
 		]
     },
     methods:{
-		/* oraAttuale() {
+	/* 	oraAttuale() {
 			var d = new Date();
 			var h = addZero(d.getHours());
 			var m = addZero(d.getMinutes());
@@ -126,7 +126,7 @@ const app = new Vue({
 		},
 		aggiungiMessaggio(i){   //array nuovoMessaggio
             //Pusha nuovoMEssaggio in array messages
-			console.log(i)
+		
 				this.contacts[this.activeUser].messages.push(
 				{
 				date: this.oraAttuale,
@@ -139,6 +139,7 @@ const app = new Vue({
 			);
 			this.nuovoMessaggio = '';
 			setTimeout(() => {
+				
 				this.contacts[this.activeUser].messages.push(
 					{
 					date: this.oraAttuale,
