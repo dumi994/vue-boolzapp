@@ -80,7 +80,8 @@
                 <div class="col-12 sezioneChat"><!-- activeUserIndex -->
                     <div class="chat d-flex">
                         <p :class="message.status" v-for="(message, index) in contacts[activeUser].messages">{{ message.text }} <br> <span class="testoPiccolo">{{message.date}}</span> </p>
-                        
+                        <!-- Nuovi messaggi -->
+                        <p  @keyup="aggiungiMessaggio"></p>
                     </div>
 
                 </div>

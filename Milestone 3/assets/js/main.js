@@ -3,6 +3,7 @@ const app = new Vue({
     el: "#root",
     data:{
 		activeUser:0,
+		nuovoMessaggio:[],
         image:"../img/avatar",
         contacts: [
 			{
@@ -101,8 +102,25 @@ const app = new Vue({
 		
 		changeActiveUser(index){
 			this.activeUser = index;
-		}
-    }
+		},
+		aggiungiMessaggio(){
+            //Pusha nuovoProdotto in listaSpesa
+            this.contacts.messages.push(this.nuovoMessaggio);
+			console.log(nuovoMessaggio);
+            return messages
+        },
+    },
+	mounted(){
+		document.addEventListener('keyup', (e) =>{
+            console.log(e.key);
+            if(e.key === 'Enter'){
+                this.aggiungiMessaggio()
+            }
+		})
+	}
+        
 })
 
-
+//milestone 3
+/* Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo. */
