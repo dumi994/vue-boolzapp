@@ -105,9 +105,10 @@ const app = new Vue({
 		},
 		aggiungiMessaggio(){
             //Pusha nuovoProdotto in listaSpesa
-            this.contacts.messages.push(this.nuovoMessaggio);
-			console.log(nuovoMessaggio);
-            return messages
+			let messaggioInv = this.contacts.message;
+            this.messaggioInv.push(this.nuovoMessaggio);
+            
+			console.log(messaggioInv);
         },
     },
 	mounted(){
