@@ -4,6 +4,7 @@ const app = new Vue({
     data:{
 		activeUser:0,
 		nuovoMessaggio:'',
+		cercaAmico = '',
 		
 		oraAttuale: function () {
             let d = new Date();
@@ -149,9 +150,20 @@ const app = new Vue({
 					status: 'received',
 					},
 				)
-			}, 3000)
-		
+			}, 3000);
+			
+
+			
         },
+		cercaContatto(){
+				this.contacts.forEach(element => { 
+					if (this.element.name.toLowerCase().includes(this.cercaAmico.toLowerCase())){
+						element.visible = true;
+					}else {
+						element.visible = false
+					}
+				});
+		}
     },
 	mounted(){
 		document.addEventListener('keydown', (e) =>{

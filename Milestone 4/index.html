@@ -47,7 +47,7 @@
                 <div class="searchbar">
                     <form action="" class="d-flex">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" class="form-control" v-model="cercaContatto" @keyup="cercaContatto"placeholder="Cerca o inizia una nuova chat">
                     </form>
                 </div>
                 <!-- /SEARCH BAR -->
