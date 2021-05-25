@@ -4,15 +4,15 @@ const app = new Vue({
     data:{
 		activeUser:0,
 		nuovoMessaggio:'',
-		cercaAmico = '',
+		cercaAmico:'',
 		
 		oraAttuale: function () {
             let d = new Date();
             let giorno = d.getDate();
             let mese = d.getMonth();
+            let minuti = d.getMinutes();
             let anno = d.getFullYear();
             let ore = d.getHours();
-            let minuti = d.getMinutes();
 			let secondi = d.getSeconds()
             let dataCompleta = `${giorno}/${mese}/${anno}  ${ore}:${minuti}:${secondi}`;
             return dataCompleta;
@@ -156,11 +156,12 @@ const app = new Vue({
 			
         },
 		cercaContatto(){
-				this.contacts.forEach(element => { 
-					if (this.element.name.toLowerCase().includes(this.cercaAmico.toLowerCase())){
-						element.visible = true;
+				this.contacts.forEach(activeUser => { 
+					if (this.activeUser.name.toLowerCase().includes(this.cercaAmico.toLowerCase())){
+						activeUser.visible = true;
+						console.log(this.activeUser);
 					}else {
-						element.visible = false
+						activeUser.visible = false
 					}
 				});
 		}
