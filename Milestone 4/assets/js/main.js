@@ -108,29 +108,29 @@ const app = new Vue({
 		]
     },
     methods:{
-	/* 	oraAttuale() {
-			var d = new Date();
-			var h = addZero(d.getHours());
-			var m = addZero(d.getMinutes());
-			var s = addZero(d.getSeconds());
-			let dataComleta = `${d}, ${h}/${m}/${s}`
-			return dataComleta;
-		}, */
+		/** 
+		 * funzione che costruisce la foto profilo
+		 * 
+		*/
         percorsoFoto(index){
-            const contatto = this.contacts[index];
-            const percorso = this.image + contatto.avatar + ".jpg";
+            const contatto = this.contacts[index]; //contatto è ogni singolo contatto ciclato nell'array
+            const percorso = this.image + contatto.avatar + ".jpg"; //prendel'immagine del array + l'avatar di ogni contatto + jpg e crea il percorso della foto
             console.log(percorso);
             return percorso;
         },
-		
 		changeActiveUser(index){
 			this.activeUser = index;
 		},
+
+		/**
+		 * funzione che aggiunge un messaggio e il bot risponde automaticamente dopo 3 secondi.
+		 * a ogni oggetto dell'array (this.activeUser)nell'elemento messagges, nell'array contacts, aggiorna l'elemento data con l'ora attuale, l'elemento text con il this.nuovoMessaggio(input) e lo status sent */ 
 		aggiungiMessaggio(){ 
             //Pusha nuovoMEssaggio in array messages
 		
 				this.contacts[this.activeUser].messages.push(
 				{
+					/* date: dayjs().fornat('DD/MM/YYYY HH:mm:ss'), */
 				date: this.oraAttuale(),
 				text: this.nuovoMessaggio,
 				status: 'sent',
@@ -139,22 +139,24 @@ const app = new Vue({
 		
 			
 			);
-			this.nuovoMessaggio = '';
+			this.nuovoMessaggio = ''; //impostiamo niente agli elementi di nuovoMessaggio 
 			setTimeout(() => {
 				
 				this.contacts[this.activeUser].messages.push(
 					{
-					/* date: dayjs().fornat('DD/MM/YYYY HH:mm:ss'), */
-					date: this.oraAttuale(),
-					text: 'Ancora te?',
-					status: 'received',
+				/* 	date: dayjs().fornat('DD/MM/YYYY HH:mm:ss'), */
+					date: this.oraAttuale(),//funzione che ci da l'ora attuale
+					text: 'Ancora te?',//risposta del bot
+					status: 'received', //a seconda dello status va nel riquadro verde o bianco
 					},
 				)
-			}, 3000);
-			
+			}, 3000); //tempo da attendere finché il bot risponda
 
-			
         },
+		/** 
+		 * funzione che cerca i contatti nell'array
+		 * */ 
+
 		cercaContatto(){
 				this.contacts.forEach(element => { 
 					if (element.name.toLowerCase().includes(this.cercaAmico.toLowerCase())){
@@ -166,6 +168,8 @@ const app = new Vue({
 				});
 		}
     },
+	/**
+	 *funzione che al rilascio di "enter" invia un messaggio  */ 
 	mounted(){
 		document.addEventListener('keydown', (e) =>{
             console.log(e.key);

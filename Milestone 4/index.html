@@ -48,11 +48,11 @@
                 <div class="searchbar">
                     <form action="" class="d-flex">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-                        <!-- SEARCHBAR -->
                         <input type="text" class="form-control" v-model="cercaAmico" @keyup="cercaContatto" placeholder="Cerca o inizia una nuova chat">
                     </form>
                 </div>
                 <!-- /SEARCH BAR -->
+                <!-- CONTATTI -->
                 <div class="contatti">
                     <div class="contatto" :class="activeUser === index ? 'active' : '' " v-for="(el, index) in contacts" v-if="el.visible === true"  @click="changeActiveUser(index)">
                       <img :src="'./assets/img/avatar' + el.avatar + '.jpg'" alt=""> 
@@ -61,6 +61,7 @@
                     </div>
                    
                 </div>
+                <!-- /CONTATTI -->
 
             </div>
             <!-- MAIN -->
@@ -71,8 +72,11 @@
                            <img :src="'./assets/img/avatar' + contacts[activeUser].avatar + '.jpg'" alt="">
                     </div>
                     <div class="col-6 text-left">
+                        <!-- CONTATTO ATTIVO VISUALIZZATO NELLA BARRA IN ALTO -->
                         <p class="m-0"><strong>{{contacts[activeUser].name}}</strong> </p class="m-0">
                         <p>Ultimo accesso alle:{{}}</p>
+                        <!-- CONTATTO ATTIVO VISUALIZZATO NELLA BARRA IN ALTO -->
+
                     </div>
                     <div class="col-5">
                         <i class="fas fa-search"></i>
@@ -80,11 +84,10 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <div class="col-12 sezioneChat"><!-- activeUserIndex -->
+                <!-- FINESTRA CHAT -->
+                <div class="col-12 sezioneChat">
                     <div class="chat d-flex">
                         <p :class="message.status" v-for="(message, index) in contacts[activeUser].messages">{{ message.text }} <br> <span class="testoPiccolo">{{message.date}}</span> </p>
-                        <!-- Nuovi messaggi -->
-                     <!--    <p  @keyup="aggiungiMessaggio" v-model="nuovoMessaggio"></p> -->
                     </div>
 
                 </div>
@@ -95,6 +98,8 @@
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-microphone"></i></span> 
                     </div>
                 </div>
+                <!-- /FINESTRA CHAT -->
+
                 <!-- /SEZIONE CHAT ATTIVA -->
             </div>
         </div>
@@ -102,9 +107,11 @@
     
 
     </div>
+    <!-- VUE JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <!-- day js -->
+    <!-- DAY JS -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <!-- JS SCRIPT -->
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
