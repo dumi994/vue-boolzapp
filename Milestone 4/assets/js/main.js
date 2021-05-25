@@ -156,12 +156,12 @@ const app = new Vue({
 			
         },
 		cercaContatto(){
-				this.contacts.forEach(activeUser => { 
-					if (this.activeUser.name.toLowerCase().includes(this.cercaAmico.toLowerCase())){
-						activeUser.visible = true;
-						console.log(this.activeUser);
+				this.contacts.forEach(element => { 
+					if (element.name.toLowerCase().includes(this.cercaAmico.toLowerCase())){
+						element.visible = true;
+						console.log(element);
 					}else {
-						activeUser.visible = false
+						element.visible = false;
 					}
 				});
 		}

@@ -47,15 +47,16 @@
                 <div class="searchbar">
                     <form action="" class="d-flex">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-                        <input type="text" class="form-control" v-model="cercaContatto" @keyup="cercaContatto"placeholder="Cerca o inizia una nuova chat">
+                        <!-- SEARCHBAR -->
+                        <input type="text" class="form-control" v-model="cercaAmico" @keyup="cercaContatto" placeholder="Cerca o inizia una nuova chat">
                     </form>
                 </div>
                 <!-- /SEARCH BAR -->
                 <div class="contatti">
-                    <div class="contatto" :class="activeUser === index ? 'active' : '' " v-for="(el, index) in contacts" @click="changeActiveUser(index)">
+                    <div class="contatto" :class="activeUser === index ? 'active' : '' " v-for="(el, index) in contacts" v-if="el.visible === true"  @click="changeActiveUser(index)">
                       <img :src="'./assets/img/avatar' + el.avatar + '.jpg'" alt=""> 
 
-                        <span>{{el.name}}  </span>
+                        <span>{{el.name}}</span>
                     </div>
                    
                 </div>
