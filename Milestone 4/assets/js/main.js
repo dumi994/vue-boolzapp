@@ -5,19 +5,6 @@ const app = new Vue({
 		activeUser:0,
 		nuovoMessaggio:'',
 		cercaAmico:'',
-		
-		oraAttuale: function () {
-            let d = new Date();
-            let giorno = d.getDate();
-            let mese = d.getMonth();
-            let minuti = d.getMinutes();
-            let anno = d.getFullYear();
-            let ore = d.getHours();
-			let secondi = d.getSeconds()
-            let dataCompleta = `${giorno}/${mese}/${anno}  ${ore}:${minuti}:${secondi}`;
-            return dataCompleta;
-        }, 
-
         image:"../img/avatar",
 
         contacts: [
@@ -130,8 +117,7 @@ const app = new Vue({
 		
 				this.contacts[this.activeUser].messages.push(
 				{
-					/* date: dayjs().fornat('DD/MM/YYYY HH:mm:ss'), */
-				date: this.oraAttuale(),
+				date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
 				text: this.nuovoMessaggio,
 				status: 'sent',
 				
@@ -144,8 +130,7 @@ const app = new Vue({
 				
 				this.contacts[this.activeUser].messages.push(
 					{
-				/* 	date: dayjs().fornat('DD/MM/YYYY HH:mm:ss'), */
-					date: this.oraAttuale(),//funzione che ci da l'ora attuale
+					date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
 					text: 'Ancora te?',//risposta del bot
 					status: 'received', //a seconda dello status va nel riquadro verde o bianco
 					},
